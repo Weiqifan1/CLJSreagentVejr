@@ -1,0 +1,13 @@
+2020-07-09
+koden kommer fra 
+https://www.learn-clojurescript.com/section-1/lesson-5-bootstrapping-a-clojurescript-project/
+
+oprette projektet "from scratch":
+lein new figwheel cljs-weather -- --reagent
+cd cljs-weather
+npm install
+lein figwheel
+
+koere projektet en anden dag:
+lein figwheel
+
