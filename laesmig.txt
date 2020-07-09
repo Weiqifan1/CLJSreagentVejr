@@ -10,4 +10,8 @@ lein figwheel
 
 koere projektet en anden dag:
 lein figwheel
+(dette skal koeres i folderen cljs-weather)
+
+git aendringer:
+(skal laves i folderen vejrApp (et niveau op))
 
