@@ -1,7 +1,9 @@
 (ns cljs-weather.core
     (:require 
               [reagent.core :as reagent :refer [atom]]
-              [reagent.dom :as rd]))
+              [reagent.dom :as rd]
+              [cljs-weather.input-system-data :as input-system-data]
+              ))
 
 (enable-console-print!)
 
@@ -29,9 +31,11 @@
 (defn hello-world []
   [:div
    [:h1 (:text @app-state)]
-   [:h3 "her er noget"]  ;;my-var   [:h3 "Chr"]
+   [:h3 "her er noget andet igen"]  ;;my-var   [:h3 "Chr"]
    [postal-code]
-   [:h4 (:postal-code @app-state)]])
+   [:h4 (:postal-code @app-state)]
+   [:h4 input-system-data/my-var]
+   ])
 
 (rd/render [hello-world]
            (. js/document (getElementById "app")))
