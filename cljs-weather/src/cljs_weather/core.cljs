@@ -3,6 +3,7 @@
               [reagent.core :as reagent :refer [atom]]
               [reagent.dom :as rd]
               [cljs-weather.input-system-data :as input-system-data]
+              [cljs-weather.hjaelpemetoder :as hjaelpemetoder]
               ))
 
 (enable-console-print!)
@@ -28,14 +29,25 @@
    [:button "Go"]])
 
 
+
+
 (defn hello-world []
   [:div
    [:h1 (:text @app-state)]
-   [:h3 "her er noget andet igen"]  ;;my-var   [:h3 "Chr"]
+   [:h3 "her er noget andet dfgdfg igen"]  ;;my-var   [:h3 "Chr"]
    [postal-code]
    [:h4 (:postal-code @app-state)]
    [:h4 input-system-data/my-var]
+   [:h4 (.toUpperCase "dfg")];;(hjaelpemetoder/parse-int "34")
+   [:h4 (.toString (+ 7 9))];;(.parseInt "5")
+   [:h4 (js/parseInt "3")]
+   [:h4 (hjaelpemetoder/parse-int "4")]
+   ;;2020-07-11 opgave: faa parseInt til at virke
+   ;;[:h4 ]
+   ;;[:h4 (.parse-int "4")];(hjaelpemetoder/parse-int "34"))]
+   [hjaelpemetoder/splitToCodepointVec2 "A腦\uD847\uDCDE\uD862\uDE0FB乃匯C\uD862\uDF4E"]
    ])
+;;hjaelpemetoder.splitToCodepointVec
 
 (rd/render [hello-world]
            (. js/document (getElementById "app")))
